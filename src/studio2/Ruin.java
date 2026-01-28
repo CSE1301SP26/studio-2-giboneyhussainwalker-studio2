@@ -10,6 +10,7 @@ public class Ruin {
         System.out.println("Win Limit?");
         winLimit = in.nextDouble();
 
+       while(startAmount < winLimit && 0 < startAmount){
         if (winChance > Math.random()) {
             startAmount ++;
             System.out.println("You Win! Your new total is " + startAmount);
@@ -17,9 +18,11 @@ public class Ruin {
             startAmount --;
             System.out.println("You Lost! Your new total is " + startAmount);
         }
-
-       while(startAmount < winLimit && 0 < startAmount){
-        
+       }
+       if(startAmount >= winLimit){
+        System.out.println("You Win!");
+       }else{
+        System.out.println("You Lost!");
        }
     }
 }
